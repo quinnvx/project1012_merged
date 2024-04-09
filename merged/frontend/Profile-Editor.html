@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Profile Editor</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='../styles/Profile.css'>
+        <link rel='stylesheet' type='text/css' media='screen' href='../styles/Profile-editor.css'>
+        <script src='../scripts/profile-editor.js'></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="navbar">
+            <a class="navbar-button" href="home.html">Home</a>
+            <div>
+                <a class="navbar-button" id="my-profile">My profile</a>
+                <a class="navbar-button" href="" id="account-settings">Account Settings</a>
+                <a class="navbar-button" href="contact.html">Contact Us</a>
+                <a class="navbar-button" onclick="logOut()" href="signUp.html" id="login-logout">Log out</a>
+            </div>
+        </div> <!-- nav bar end-->
+
+        <br/><br/>
+
+        <div id="profile">
+            <div id="edit-background">
+                <div>
+                    <img src="../svgs/setting-5-svgrepo-com.svg">
+                    <h1>Page settings</h1>
+                </div>
+                <div>
+                    <label>Background Color: </label>
+                    <input type="color" id="color-picker">
+                    <button onclick="saveBGColor()">Set background color</button>
+                </div>
+                <form target="_blank" action="http://localhost:3000/api/upload/bgImg" enctype="multipart/form-data" method="post">
+                    <label for="bgImg">Background Image: </label>
+                    <input type="file" name="bgImg" id="bgImg" accept="image/*">
+                    <button type="submit">Upload</button>
+                    <button onclick="setBgImg()">Set Image</button>
+                </form>
+                <div>
+                    <label>Text color</label>
+                    <input type="color" id="text-color-picker">
+                    <button onclick="saveTextColor()">Set text color</button>
+                </div>
+            </div><!--background editor end-->
+
+            <br/><br/>
+
+            <div id="profile-picture-editor">
+                <img src="../images/default.jpg" alt="profile picture" id="profile-picture"/>
+                <form target="_blank" action="http://localhost:3000/api/upload/pfp" enctype="multipart/form-data" method="post">
+                    <label for="pfp">Change profile picture:</label>
+                    <input type="file" name="pfp" id="pfp" accept="image/*">
+                    <button type="submit">Upload</button>
+                    <button onclick="setPFP()">Set Image</button>
+                    <button onclick="clearPFP()">Clear Image</button>
+                </form>
+            </div><!--profile picture editor end-->
+
+            <br/>
+
+            <div id="username-follow">
+                <h1 id="username">@Username</h1>
+            </div>
+
+            <div id="stats">
+                <h3>Pages: X</h3>
+                <h3>Following: X</h3>
+                <h3>Followers: X</h3>
+            </div><!--stats end-->
+
+            <br/>
+
+            <div id="description-editor">
+                <label>Edit Description:</label>
+                <textarea id="description">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                </textarea>
+                <div>
+                    <button onclick="saveDesc()">Save</button>
+                    <br/><br/>
+                    <p id="descSaveStatus">Status: Saved</p>
+                </div>
+            </div><!--description editor end-->
+            
+            <br/><hr id="line"/>
+
+            <div id="pages">
+                <div><!--row 1-->
+                    <div role="button" class="page-link">
+                        <img class="page-img" src="../images/default.jpg" alt="img"/>
+                        <h1 class="page-title">Page Title
+                            <img class="edit-page-button" role="button" src="../svgs/pen-svgrepo-com.svg">
+                        </h1>
+                    </div><!--page end-->
+                    <div role="button" class="page-link">
+                        <img class="page-img" src="../images/default.jpg" alt="img"/>
+                        <h1 class="page-title">Page Title
+                            <img class="edit-page-button" role="button" src="../svgs/pen-svgrepo-com.svg">
+                        </h1>
+                    </div><!--page end-->
+                    <div role="button" class="page-link">
+                        <img class="page-img" src="../images/default.jpg" alt="img"/>
+                        <h1 class="page-title">Page Title
+                            <img class="edit-page-button" role="button" src="../svgs/pen-svgrepo-com.svg">
+                        </h1>
+                    </div><!--page end-->
+                </div><!--row 1 end-->
+                <div><!-- row 2-->
+                    <div role="button" class="page-link">
+                        <img class="page-img" src="../images/default.jpg" alt="img"/>
+                        <h1 class="page-title">Page Title
+                            <img class="edit-page-button" role="button" src="../svgs/pen-svgrepo-com.svg">
+                        </h1>
+                    </div><!--page end-->
+                    <div role="button" class="page-link">
+                        <img class="page-img" src="../images/default.jpg" alt="img"/>
+                        <h1 class="page-title">Page Title
+                            <img class="edit-page-button" role="button" src="../svgs/pen-svgrepo-com.svg">
+                        </h1>
+                    </div><!--page end-->
+                    <div role="button" class="page-link" id="add-page">
+                        <br/>
+                        <h1 id="plus">+</h1>
+                        <h1>Add Page</h1>
+                    </div><!--page end-->
+                </div><!--row 2 end-->
+            </div><!--user pages end-->
+
+        </div><!--profile end-->
+    </body>
+</html>

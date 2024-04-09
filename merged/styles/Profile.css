@@ -1,0 +1,116 @@
+* {
+    --grey-bg: rgb(151, 151, 151);
+    --light-grey: rgb(198, 198, 198);
+    --dark-grey: rgb(85, 85, 85);
+    --darker-grey: rgb(58, 58, 58);
+    font-family: sans-serif;
+    margin: 0px;
+}
+
+.navbar {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    position: fixed;
+    width: 100%;
+}
+
+.navbar > div {
+    margin: 0px 50px;
+}
+
+#profile {
+    background-color: var(--grey-bg);
+    margin: 50px;
+    padding: 25px;
+    text-align: center;
+}
+.navbar-button {
+    margin: 0px 10px;
+    color: rgb(172, 172, 172);
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+.navbar-button:hover {
+    color: white;
+    text-decoration: underline;
+    transition: all 0.5s ease;
+}
+#stats {
+    display: flex;
+    margin: auto;
+    width: fit-content;
+}
+#stats > h3 {
+    font-weight: normal;
+    margin: 10px;
+    color: var(--dark-grey);
+}
+#username-follow {
+    display: flex;
+    margin: auto;
+    width: fit-content;
+}
+#username-follow > * {
+    margin: 0px 10px;
+}
+#username-follow > h1 {
+    font-weight: normal;
+    font-size: 25px;
+}
+#username-follow > button {
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: rgb(203, 203, 203);
+    transition: all 0.5s ease;
+}
+#username-follow > button:hover {
+    font-size: 17px;
+    padding: 0 5px;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.5s ease;
+}
+#description {
+    margin: 0px 15%;
+}
+#pages > div {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+.page-link {
+    margin: 10px;
+    width: 30%;
+}
+.page-img {
+    width: 100%;
+    margin: 0;
+}
+.page-title {
+    font-weight: normal;
+    font-size: 30px;
+    background-color: var(--dark-grey);
+    color: var(--light-grey);
+    transition: all 0.5s ease;
+}
+.page-title:hover {
+    color: white;
+    transition: all 0.5s ease;
+}
+hr {
+    margin: 10px;
+    border: 1px solid var(--dark-grey);
+}
+#profile-picture {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+#descSaveStatus {
+    color: green;
+    /* text-shadow: 1; */
+}

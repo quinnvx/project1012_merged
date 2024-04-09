@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Your blog begins!</title>
+        <link rel="stylesheet" href="pageEditor.css" title="style"/>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="pageEditor.js"> </script>
+        <!--<script src="https://kit.fontawesome.com/2a5e0b1595.js" crossorigin="anonymous"></script> -->
+    </head>
+
+    <body onload="loadScript()">
+        
+        <nav class="navbar"> 
+            <a href="home.html" class="general" id="home"> Home </a>
+            <a href="https://www.google.com/" class="personal" id="profile"> My Profile </a>
+        </nav>
+
+        <input type="text" id="title" name="title" placeholder="Your blog's title">
+        <div id="toolbar" class="toolbar">
+            <button onclick="bold()"> 
+                <i class="fa-solid fa-bold"></i>
+            </button>
+            <button onclick="italic()"> 
+                <i class="fa-solid fa-italic"></i> 
+            </button>
+            <button onclick="underline()">
+                <i class="fa-solid fa-underline"></i>
+            </button>
+            <button onclick="leftAlign()"> 
+                <i class="fas fa-align-left"></i>
+            </button> 
+            <button onclick="centerAlign()"> 
+                <i class="fas fa-align-center"></i>
+            </button>
+            <button onclick="rightAlign()"> 
+                <i class="fas fa-align-right"></i>
+            </button>
+            <button onclick="justifyAlign()">
+                <i class="fa-solid fa-align-justify"></i>
+            </button>
+            <!-- Font Change button -->
+            <div class="dropdown">
+                <button onclick="dropdown()" class="btnFontChange">
+                    <i class="fa-solid fa-font"></i>
+                </button>
+                <div id="myDropdown" class="dropdown-content">
+                    <p onclick="times()"> Times New Roman </p>
+                    <p onclick="georgia()"> Georgia </p>
+                    <p onclick="garamond()"> Garamond </p>
+                    <p onclick="arial()"> Arial </p>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="rows">
+            <div class="textbox">
+                <textarea
+                    id="textarea1" 
+                    name="name"
+                    rows = "15" 
+                    cols = "100"
+                    placeholder = "Write here..."></textarea>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div id="submit">
+            <p id="inform"> </p>
+            <button onclick="save()" class="btnSubmit"> Save draft </button>
+            <button onclick="publish()" class="btnSubmit"> Publish </button> 
+        </div>
+    </body>
+</html>
